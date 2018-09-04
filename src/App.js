@@ -29,11 +29,16 @@ const particlesOptions = {
     super();
     this.state= {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      box: {},
+
 
     }
   }
 
+  calculateFaceLocation= (data) =>{
+
+  }
   onInputChange=(event) =>{
     this.setState({input:event.target.value});
   }
@@ -46,6 +51,7 @@ const particlesOptions = {
       this.state.input)
       .then(
     function(response) {
+       this.calculateFaceLocation(response);
       console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
     },
     function(err) {
