@@ -64,8 +64,10 @@ const particlesOptions = {
     return (<div className="App">
       <Particles className='particles'
        params={particlesOptions}/>
-
+    <div className= 'center'>
       <Navigation/>
+
+    </div>
       <Logo/>
       <Rank/>
       <ImageLinkForm
